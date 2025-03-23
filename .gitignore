@@ -1,12 +1,8 @@
-# After Effects auto-save files
-Adobe After Effects Auto-Save
 
-# After Effects project files
 *.aep
 *.aepx
 *.aet
 
-# OS specific files
 .DS_Store
 .DS_Store?
 ._*
@@ -15,7 +11,7 @@ Adobe After Effects Auto-Save
 ehthumbs.db
 Thumbs.db
 
-# Misc
+
 .git
 githelper.py
 node_modules/
