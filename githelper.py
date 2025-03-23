@@ -187,12 +187,25 @@ def git_push():
         
         # Push (with -u if it's a first push)
         print(RetroColors.HEADER + f"\n[+] Pushing to '{branch}'...")
+        
+        # Ask if force push is needed
+        if check_remote.returncode == 0 and check_remote.stdout.strip():
+            force_push = input(RetroColors.PROMPT + "Remote branch exists. Use force push? (y/n): ").lower() == 'y'
+        else:
+            force_push = False
+            
         if check_remote.returncode != 0 or not check_remote.stdout.strip():
             # First push - use -u to set upstream
-            push_result = run_git_command(f"git push -u origin {branch}")
+            push_cmd = f"git push -u origin {branch}"
+            if force_push:
+                push_cmd = f"git push -u -f origin {branch}"
+            push_result = run_git_command(push_cmd)
         else:
             # Normal push
-            push_result = run_git_command(f"git push origin {branch}")
+            push_cmd = f"git push origin {branch}"
+            if force_push:
+                push_cmd = f"git push -f origin {branch}"
+            push_result = run_git_command(push_cmd)
             
         if push_result.returncode == 0:
             print(RetroColors.SUCCESS + "\n[✓] Push completed.")
@@ -213,13 +226,26 @@ def quick_update():
     if input(RetroColors.PROMPT + f"Push to '{branch}'? (y/n): ").lower() == 'y':
         # Check if remote branch exists
         check_remote = run_git_command(f"git ls-remote --heads origin {branch}", silent=True)
+        
+        # Ask if force push is needed
+        if check_remote.returncode == 0 and check_remote.stdout.strip():
+            force_push = input(RetroColors.PROMPT + "Remote branch exists. Use force push? (y/n): ").lower() == 'y'
+        else:
+            force_push = False
+            
         if check_remote.returncode == 0 and check_remote.stdout.strip():
             # Normal push
-            push_result = run_git_command(f"git push origin {branch}")
+            push_cmd = f"git push origin {branch}"
+            if force_push:
+                push_cmd = f"git push -f origin {branch}"
+            push_result = run_git_command(push_cmd)
         else:
             # First push - use -u to set upstream
             print(RetroColors.INFO + f"\n[i] Remote branch '{branch}' not found. Creating it...")
-            push_result = run_git_command(f"git push -u origin {branch}")
+            push_cmd = f"git push -u origin {branch}"
+            if force_push:
+                push_cmd = f"git push -u -f origin {branch}"
+            push_result = run_git_command(push_cmd)
             
         if push_result.returncode == 0:
             print(RetroColors.SUCCESS + "\n[✓] Update completed.")

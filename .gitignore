@@ -17,5 +17,6 @@ Thumbs.db
 
 # Misc
 .git
+githelper.py
 node_modules/
 *.zip
