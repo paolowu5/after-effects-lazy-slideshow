@@ -16,5 +16,6 @@ ehthumbs.db
 Thumbs.db
 
 # Misc
+.git
 node_modules/
 *.zip
