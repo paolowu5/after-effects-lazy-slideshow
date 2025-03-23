@@ -20,14 +20,14 @@ An Adobe After Effects script that automatically creates professional slideshows
 
 ### Method 1: Run from any location
 
-1. Download the ZIP file from the [Releases](https://github.com/yourusername/after-effects-lazy-slideshow/releases) page
+1. Download the ZIP file from the [Releases](https://github.com/paolowu5/after-effects-lazy-slideshow/releases) page
 2. Extract to a folder
 3. In After Effects, go to File > Scripts > Run Script File...
 4. Select the "Lazy Slideshow v2.jsx" file
 
 ### Method 2: Permanent Installation
 
-1. Download the ZIP file from the [Releases](https://github.com/yourusername/after-effects-lazy-slideshow/releases) page
+1. Download the ZIP file from the [Releases](https://github.com/paolowu5/after-effects-lazy-slideshow/releases) page
 2. Copy all files to the After Effects ScriptUI Panels folder:
    - Windows: `C:\Program Files\Adobe\Adobe After Effects [version]\Support Files\Scripts\ScriptUI Panels`
    - Mac: `/Applications/Adobe After Effects [version]/Scripts/ScriptUI Panels`
@@ -69,9 +69,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 <div align="center">
   <p>Made by lazy people for lazy people</p>
   <p>
-    <a href="https://diffusionbot.pages.dev">Webpage</a> •
+    <a href="https://lazyslideshow.pages.dev/">Webpage</a> •
     <a href="https://3156877858949.gumroad.com/l/lazyslideshow">Gumroad</a> •
-    <a href="https://github.com/yourusername/after-effects-lazy-slideshow">GitHub</a> • 
-    <a href="https://github.com/yourusername/after-effects-lazy-slideshow/issues">Report Issues</a>   
+    <a href="https://github.com/paolowu5/after-effects-lazy-slideshow">GitHub</a> • 
+    <a href="https://github.com/paolowu5/after-effects-lazy-slideshow/issues">Report Issues</a>   
   </p>
 </div>
